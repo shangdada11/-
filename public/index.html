@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ch">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <title>史蒂夫游戏资讯网页</title>
+	<style>
+		/* 看板娘 */
+		#live2dcanvas{
+			position:fixed;
+			z-index: 10;
+			right: 0;
+			bottom: 30px;
+			opacity: 1;
+			pointer-events: none;
+			display: none;
+		}
+	</style>
+  </head>
+  <body>
+    <noscript>
+      <strong>We're sorry but default doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+	<div id="live2d-widget">
+	    <canvas id="live2dcanvas">
+	</div>
+	    <div id="app"></div>
+    <!-- built files will be auto injected -->
+	<!-- 看板娘部分 -->
+	<script src="https://cdn.bootcdn.net/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+	<script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script>
+	<script>
+	    L2Dwidget.init({
+	        "model": {
+	            jsonPath: "https://unpkg.com/live2d-widget-model-haruto/assets/haruto.model.json",//这里改模型，前面后面都要改
+	            "scale": 1
+	        },
+	        "display": {
+	            "position": "right",//设置看板娘的上下左右位置
+	            "width": 120,
+	            "height": 150,
+	            "hOffset": 100,
+	            "vOffset": 10
+	        },
+	        "mobile": {
+	            "show": true,
+	            "scale": 0.5
+	        },
+	        "react": {
+	            "opacityDefault": 1,//设置透明度
+	            "opacityOnHover": 0.2
+	        }
+	    });
+	</script>
+	<!-- 看板娘部分结束 -->
+  </body>
+</html>
